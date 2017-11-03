@@ -11,7 +11,7 @@ class FiguresController < ApplicationController
 
     if !params[:title][:name].empty?
       @title = Title.create(params[:title])
-      @figure.title_ids << @title.id
+      @figure.title_ids << @title
     end
     @figure.save
     redirect to "/figures/#{@figure.id}"
