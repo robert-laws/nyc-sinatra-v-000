@@ -1,4 +1,7 @@
 class FiguresController < ApplicationController
+  get '/figures' do
+    @figures = Figure.all
+  end
 
   get '/figures/new' do
     @titles = Title.all
