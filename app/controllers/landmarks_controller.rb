@@ -20,7 +20,11 @@ class LandmarksController < ApplicationController
 
   get '/landmarks/:id/edit' do
     @landmark = Landmark.find(params[:id])
-
     erb :'landmarks/edit'
+  end
+
+  post '/landmarks/:id/edit' do
+    @landmark = Landmark.find(params[:id])
+    @landmark.update(params[:landmark])
   end
 end
