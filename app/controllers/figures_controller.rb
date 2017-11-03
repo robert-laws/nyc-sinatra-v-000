@@ -54,5 +54,7 @@ class FiguresController < ApplicationController
       @figure.landmarks << @landmark
     end
     @figure.save
+
+    redirect to "/figures/#{@figure.id}"
   end
 end
