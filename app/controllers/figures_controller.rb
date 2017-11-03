@@ -1,3 +1,4 @@
+require 'pry'
 class FiguresController < ApplicationController
 
   get '/figures/new' do
@@ -7,6 +8,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/new' do
+    
     @figure = Figure.create(params[:figure])
 
     # redirect to "/figures/#{@figure.id}"
