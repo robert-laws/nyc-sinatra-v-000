@@ -51,7 +51,7 @@ class FiguresController < ApplicationController
       @figure.landmarks << @landmark
     end
     @figure.save
-    
+
     erb :'figures/edit'
   end
 end
