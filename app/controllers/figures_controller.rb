@@ -37,7 +37,10 @@ class FiguresController < ApplicationController
     @figure = Figure.find("#{params[:id]}")
     @titles = Title.all
     @landmarks = Landmark.all
+    erb :'figures/edit'
+  end
 
+  post '/figures/:id/edit' do
     @figure = Figure.create(params[:figure])
 
     if !params[:title][:name].empty?
@@ -51,7 +54,5 @@ class FiguresController < ApplicationController
       @figure.landmarks << @landmark
     end
     @figure.save
-
-    erb :'figures/edit'
   end
 end
