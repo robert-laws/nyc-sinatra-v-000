@@ -6,7 +6,7 @@ class FiguresController < ApplicationController
     erb :'figures/new'
   end
 
-  post '/figure/new' do
+  post '/figures/new' do
     @figure = Figure.create(params[figure])
     redirect to "/figures/#{@figure.id}"
   end
