@@ -1,23 +1,23 @@
 <form action="" method="">
   <label>New Figure Name:</label> <input type="text" name="figure[name]" id="figure_name">
-
-  <label>Titles:</label>
+  <br><br>
+  <label>Titles:</label><br>
   <%@titles.each do |title|%>
     <input type="checkbox" name="figure[title_ids][]" value="<%=title.id%>" id="<%=title.id%>">
       <%=title.name%>
     </input>
   <%end%>
-
+  <br><br>
   <label>New Title:</label> <input type="text" name="title[name]">
-
-  <labe>Landmarks:</label>
+  <br><br>
+  <labe>Landmarks:</label><br>
   <%@landmarks.each do |landmark|%>
     <input type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" id="<%=landmark.id%>">
       <%=landmark.name%>
     </input>
   <%end%>
-
+  <br><br>
   <label>New Landmark:</label> <input type="text" name="landmark[name]">
-
+  <br><br>
   <input type="submit" id="submit" value="Create New Figure">
 </form>
