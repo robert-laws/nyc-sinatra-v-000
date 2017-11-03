@@ -10,7 +10,7 @@ class FiguresController < ApplicationController
     @figure = Figure.create(params[:figure])
 
     if !params[:title][:name].empty?
-      @title = Title.create(:title)
+      @title = Title.create(params[:title])
       @figure.title_ids << @title.id
     end
     @figure.save
