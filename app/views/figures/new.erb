@@ -1,6 +1,11 @@
 <form action="" method="">
   <label>Name:</label> <input type="text" name="figure[name]">
   <label>Titles:</label>
+  <%@titles.each do |title|%>
+    <input type="checkbox" name="title[name]" value="<%=title.id%>" id="<%=title.id%>">
+      <%=title.name%>
+    </input>
+  <%end%>
 
   <labe>Landmarks:</label>
   <%@landmarks.each do |landmark|%>
