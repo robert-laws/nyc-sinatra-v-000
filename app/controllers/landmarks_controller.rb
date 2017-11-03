@@ -7,4 +7,9 @@ class LandmarksController < ApplicationController
   post '/landmarks/new' do
     @landmark = Landmark.create(params[:landmark])
   end
+
+  get '/landmarks' do
+    @landmarks = Landmark.all
+    erb :show
+  end
 end
