@@ -41,7 +41,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/:id/edit' do
-    @figure = Figure.create(params[:figure])
+    @figure = Figure.find(params[:id])
 
     if !params[:title][:name].empty?
       @title = Title.create(params[:title])
