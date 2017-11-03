@@ -9,6 +9,6 @@ class FiguresController < ApplicationController
   post '/figures/new' do
     @figure = Figure.create(params[figure])
     
-    redirect to "/figures/#{@figure.id}"
+    # redirect to "/figures/#{@figure.id}"
   end
 end
