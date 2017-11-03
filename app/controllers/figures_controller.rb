@@ -8,6 +8,12 @@ class FiguresController < ApplicationController
 
   post '/figures/new' do
     @figure = Figure.create(params[:figure])
+
+    if !params[:title][:name].empty?
+      @title = Title.create(:title)
+      @figure.title_ids << @title.id
+    end
+    @figure.save
     redirect to "/figures/#{@figure.id}"
   end
 end
