@@ -7,6 +7,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figure/new' do
-    
+
+    redirect to "/figures/#{@figure.id}"
   end
 end
